@@ -126,15 +126,6 @@ model Post {
 }
 ```
 
-## Set provider to sqlite for development and postgres for production
-
-```
-datasource DS {
-  provider = ["sqlite", "postgresql"]
-  url      = env("DATABASE_URL")
-}
-```
-
 ## Save and apply migration
 
 ```
@@ -214,6 +205,17 @@ export const Success = ({ posts }) => {
 ```
 yarn rw g deploy netlify
 ```
+
+## Set provider to postgres for production
+
+```
+datasource DS {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+```
+
+## Commit final state of project
 
 ```
 git add .
